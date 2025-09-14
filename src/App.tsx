@@ -18,7 +18,7 @@ export default function App() {
 
     const handleSearch = React.useCallback((q: string) => {
         setQuery(q.trim());
-        console.log("Search:", query);
+        console.log("Search:", q);
     }, []);
 
     const onTagClick = React.useCallback((t: string) => {
@@ -29,7 +29,7 @@ export default function App() {
     <div className="bg-black min-h-screen text-white">
       <Header onSearch={handleSearch} />
         <main id="main">
-          <Hero />
+          <Hero onSearch={handleSearch} />
           <TagList title="Trending" tags={tags} onTagClick={onTagClick} />
           <TagList title="For you" tags={tags} onTagClick={onTagClick} />
         </main>

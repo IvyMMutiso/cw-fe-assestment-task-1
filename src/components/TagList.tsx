@@ -8,11 +8,6 @@ type TagListProps = {
 };
 
 export default React.memo(function TagList({title, tags, onTagClick }: TagListProps) {
-    // const handleClick = React.useCallback(
-    //     (tag: string) => () => onTagClick?.(tag),
-    //     [onTagClick]
-    // );
-
     const titleId = React.useId();
 
     return (
@@ -22,16 +17,6 @@ export default React.memo(function TagList({title, tags, onTagClick }: TagListPr
                 {tags.map((tag: string) => (
                     <li key={tag}>
                         <TagChip label={tag} onClick={onTagClick}></TagChip>
-                        {/*<Badge asChild className="bg-gray-800 text-white hover:bg-gray-700">*/}
-                        {/*    <button*/}
-                        {/*        type="button"*/}
-                        {/*        onClick={handleClick(tag)}*/}
-                        {/*        className="px-3 py-1 rounded-md focus:outline-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-white/60"*/}
-                        {/*        aria-label={`Filter by ${tag}`}*/}
-                        {/*    >*/}
-                        {/*        {tag}*/}
-                        {/*    </button>*/}
-                        {/*</Badge>*/}
                     </li>
                 ))}
             </ul>

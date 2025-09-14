@@ -25,7 +25,7 @@ export default function SearchBar({ initialValue = "", onSearch }: SearchBarProp
 
     return (
         <form
-            className="flex items-center bg-black/80 px-4 py-2 rounded-full w-full max-w-xl mt-6 shadow-lg"
+            className="flex items-center bg-black/80 px-4 py-2 rounded-lg w-full max-w-xl mt-6 shadow-lg"
             role="search"
             aria-label="Site"
             onSubmit={handleSubmit}
