@@ -17,9 +17,11 @@ export default function App() {
   return (
     <main className="bg-black min-h-screen text-white">
       <Header />
-      <Hero />
-      <TagList title="Trending" tags={tags} />
-      <TagList title="For you" tags={tags} />
+        <main>
+          <Hero />
+          <TagList title="Trending" tags={tags} />
+          <TagList title="For you" tags={tags} />
+        </main>
     </main>
   );
 }

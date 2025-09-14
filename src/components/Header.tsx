@@ -4,7 +4,7 @@ import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar.tsx";
 
 export default function Header() {
     return (
-        <header className="flex items-center justify-between px-6 py-4 bg-black border-b border-gray-800">
+        <header className="flex items-center justify-between px-6 py-4 bg-black border-b border-gray-500">
             <div className="flex items-center gap-2">
                 <img src="/task1/logo.png" alt="Logo" className="w-10 h-10" />
                 <div className="text-white font-semibold text-lg">Wortionary</div>
@@ -12,13 +12,13 @@ export default function Header() {
 
             <div className="flex items-center gap-4">
                 <div style={{ position: "relative" }}>
-          <span>
-            <span>
-              <span className="absolute left-3 top-2.5">
-                <Search className="text-gray-400 text-sm" />
-              </span>
-            </span>
-          </span>
+                  <span>
+                    <span>
+                      <span className="absolute left-3 top-2.5">
+                        <Search className="text-gray-400 text-sm" />
+                      </span>
+                    </span>
+                  </span>
                     <Input
                         type="text"
                         value="search"

@@ -14,9 +14,28 @@
 ### App.tsx
 
 1. Component naming
-    - Issue: Magic naming of components
+    - Issue: Magic naming of components: BoxArea97
     - Fix: Renamed BoxArea97 to Hero
-2. App structure
+2. App.tsx file structure
     - Issue: All components in one file
-    - Fix: Extracted Header, Hero, TagChip, TagList into components. Improves readability, reusability and maintainability.
+    - Fix: Extracted Header, Hero, TagChip, TagList into components inorder readability, reusability and maintainability.
 
+### Hero.tsx
+
+1. Component naming
+    - Issue: Magic naming of components: BoxArea108
+    - Fix: Renamed BoxArea108 to SearchBar
+2. Hero.tsx file structure
+    - Issue: SearchBar component inside Hero.tsx
+    - Fix: Extracted SearchBar into its own component to readability, reusability and maintainability.
+
+
+### SearchBar.tsx
+
+1. Search form
+    - Issue: Search input wasn't inside a <form> tag.
+    - Fix: Implemented `SearchBar` as a `<form role="search">` with a **visually hidden label** and a submit button (`type=
+    - Fix: Implemented SearchBar as a form
+2. Search form accessibility
+    - Issue:  No accessible label within the search form.
+    - Fix: Added a visually hidden label to the search form and made the submit button of type submit.
