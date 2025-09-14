@@ -6,9 +6,7 @@ export default function Hero({ onSearch }: { onSearch: (q: string) => void }) {
             <img src="/task1/hero-bg.png" className="w-full h-96 object-cover" alt="Hero Background"/>
             <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center px-4">
                 <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight">
-                    Search for words, phrases and
-                    <br className="hidden md:block" />
-                     meanings
+                    Search for words, phrases and <br className="hidden md:block" /> meanings
                 </h1>
                 <SearchBar initialValue="" onSearch={onSearch} />
             </div>

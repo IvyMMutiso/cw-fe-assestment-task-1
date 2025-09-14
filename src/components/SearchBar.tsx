@@ -1,4 +1,4 @@
-import {type ChangeEvent, type FormEvent, useCallback, useState} from "react";
+import {type ChangeEvent, type FormEvent, useCallback, useId, useState} from "react";
 import {Search} from "lucide-react";
 import {Input} from "@/components/ui/input.tsx";
 import { Button } from "@/components/ui/button";
@@ -9,6 +9,7 @@ type SearchBarProps = {
 };
 
 export default function SearchBar({ initialValue = "", onSearch }: SearchBarProps) {
+    const id = useId();
     const [query, setQuery] = useState<string>(initialValue);
 
     const onChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
@@ -27,15 +28,15 @@ export default function SearchBar({ initialValue = "", onSearch }: SearchBarProp
         <form
             className="flex items-center bg-black/80 px-4 py-2 rounded-lg w-full max-w-xl mt-6 shadow-lg"
             role="search"
-            aria-label="Site"
+            aria-label="Search words, phrases and meanings"
             onSubmit={handleSubmit}
         >
-            <label htmlFor="q" className="sr-only">
+            <label htmlFor={id} className="sr-only">
                 Search words, phrases and meanings
             </label>
             <Search aria-hidden="true" className="text-gray-400 mr-3" />
             <Input
-                id="q"
+                id={id}
                 name="q"
                 value={query}
                 onChange={onChange}
