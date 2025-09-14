@@ -49,3 +49,9 @@
 2. ul tag
     - Issue: div tag was used instead of ul
     - Fix: Changed div to ul and added a role="list" attribute to the ul tag. Added <li> tags to the ul tag.
+
+
+### Header.tsx
+1. nav tag
+    - Issue: div tag was used instead of nav
+    - Fix: Changed div to nav

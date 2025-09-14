@@ -2,7 +2,7 @@ import { useState } from "react";
 import Header from "@/components/Header.tsx";
 import Hero from "@/components/Hero.tsx";
 import TagList from "@/components/TagList.tsx";
-
+import * as React from "react";
 
 export default function App() {
   const [tags, setTags] = useState([
@@ -14,14 +14,25 @@ export default function App() {
     "Ghosting",
   ]);
 
+    const [query, setQuery] = useState("");
+
+    const handleSearch = React.useCallback((q: string) => {
+        setQuery(q.trim());
+        console.log("Search:", query);
+    }, []);
+
+    const onTagClick = React.useCallback((t: string) => {
+        console.log("tag:", t);
+    }, []);
+
   return (
-    <main className="bg-black min-h-screen text-white">
-      <Header />
-        <main>
+    <div className="bg-black min-h-screen text-white">
+      <Header onSearch={handleSearch} />
+        <main id="main">
           <Hero />
-          <TagList title="Trending" tags={tags} />
-          <TagList title="For you" tags={tags} />
+          <TagList title="Trending" tags={tags} onTagClick={onTagClick} />
+          <TagList title="For you" tags={tags} onTagClick={onTagClick} />
         </main>
-    </main>
+    </div>
   );
 }
