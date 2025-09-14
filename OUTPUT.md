@@ -39,3 +39,13 @@
 2. Search form accessibility
     - Issue:  No accessible label within the search form.
     - Fix: Added a visually hidden label to the search form and made the submit button of type submit.
+
+
+### TagList.tsx
+
+1. h2 tag
+    - Issue: div tag was used instead of h2
+    - Fix: Changed div to h2
+2. ul tag
+    - Issue: div tag was used instead of ul
+    - Fix: Changed div to ul and added a role="list" attribute to the ul tag. Added <li> tags to the ul tag.

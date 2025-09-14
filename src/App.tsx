@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Header from "@/components/Header.tsx";
-import TagList from "@/components/TagList.tsx";
 import Hero from "@/components/Hero.tsx";
+import TagList from "@/components/TagList.tsx";
 
 
 export default function App() {
