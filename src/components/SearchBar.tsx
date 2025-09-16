@@ -12,9 +12,13 @@ export default function SearchBar({ initialValue = "", onSearch }: SearchBarProp
     const id = useId();
     const [query, setQuery] = useState<string>(initialValue);
 
-    const onChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+    const onChange = (e: ChangeEvent<HTMLInputElement>) => {
         setQuery(e.target.value);
-    }, []);
+
+        setTimeout(() => {
+            onSearch(e.target.value);
+        }, 400)
+    }
 
     const handleSubmit = useCallback(
         (e: FormEvent<HTMLFormElement>) => {

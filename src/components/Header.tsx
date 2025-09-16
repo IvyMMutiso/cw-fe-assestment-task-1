@@ -16,10 +16,6 @@ export default function Header({onSearch}: {onSearch: (q: string) => void }) {
 
     return (
         <header className="bg-black border-b border-gray-400">
-            <a href="#main" className="sr-only focus:not-sr-only px-3 py-2">
-                Skip to content
-            </a>
-
             <div className="w-full px-4 sm:px-6 py-3">
                 <div className="flex flex-col gap-3">
                     {/* Row 1: logo and avatar for mobile, logo, search and avatar for desktop */}

@@ -5,34 +5,46 @@ import TagList from "@/components/TagList.tsx";
 import * as React from "react";
 
 export default function App() {
-  const [tags, setTags] = useState([
-    "NFT",
-    "Metaverse",
-    "Sustainable",
-    "Sonder",
-    "FOMO",
-    "Ghosting",
-  ]);
+  const defaultTags = [
+      "NFT",
+      "Metaverse",
+      "Sustainable",
+      "Sonder",
+      "FOMO",
+      "Ghosting",
+  ];
 
-    const [query, setQuery] = useState("");
+    const [tags, setTags] = useState(defaultTags);
 
-    const handleSearch = React.useCallback((q: string) => {
-        setQuery(q.trim());
-        console.log("Search:", q);
-    }, []);
+  const [query, setQuery] = useState("");
 
-    const onTagClick = React.useCallback((t: string) => {
-        console.log("tag:", t);
-    }, []);
+  const handleSearch = (q: string) => {
+    setQuery(q.trim());
+    console.log("Search:", q);
+
+    const filteredTags= [...defaultTags].filter(tag => tag.toLowerCase().includes(q.toLowerCase()));
+    setTags(filteredTags);
+  };
+
+  const onTagClick = React.useCallback((t: string) => {
+    console.log("tag:", t);
+  }, []);
 
   return (
     <div className="bg-black min-h-screen text-white">
       <Header onSearch={handleSearch} />
-        <main id="main">
-          <Hero onSearch={handleSearch} />
-          <TagList title="Trending" tags={tags} onTagClick={onTagClick} />
-          <TagList title="For you" tags={tags} onTagClick={onTagClick} />
-        </main>
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only px-3 py-2 focus:`top-2 focus:left-2"
+      >
+        Skip to content
+      </a>
+
+      <main id="main">
+        <Hero onSearch={handleSearch} />
+        <TagList title="Trending" tags={tags} onTagClick={onTagClick} />
+        <TagList title="For you" tags={tags} onTagClick={onTagClick} />
+      </main>
     </div>
   );
 }
